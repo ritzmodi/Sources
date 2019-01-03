@@ -1,3 +1,4 @@
+
 1. from visual studio create app service template + parameters file
 	choose web app template
 	Just keep first two resources and delete rest of them. Ensure there is no trailing comma
@@ -11,6 +12,15 @@
 
 	change the variable as shown here
 		"webSiteName": "[parmeters('websitename')]"
+
+add to parameter file
+    "hostingPlanName": {
+      "value": "someoddplanname"
+    },
+    "websitename": {
+      "value": "someoddweb823746"
+    }
+  }
 
 3. disable continues integration
 
@@ -34,3 +44,11 @@ add a variable in release definition
 	
 
 8. change code to run end to end
+
+
+
+
+
+
+
+
