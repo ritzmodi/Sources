@@ -1,0 +1,36 @@
+1. from visual studio create app service template + parameters file
+	choose web app template
+	Just keep first two resources and delete rest of them. Ensure there is no trailing comma
+
+2. add these two files to main project
+	add a new parameter for websitename
+    "websitename": {
+      "type": "string",
+      "minLength": 1
+    },
+
+	change the variable as shown here
+		"webSiteName": "[parmeters('websitename')]"
+
+3. disable continues integration
+
+4. push the code
+
+5. verify in repo the new files exists
+
+6. enable continues integration
+
+7. modify release definition
+	change override to -websitename $(websitename)
+	choose parameters file
+	choose actual arm template file
+
+add a variable in release definition 
+	websitename = mclassdummyapps
+
+8. Add a new task Azure APp Service Deploy task and configure it
+	App type = Web App
+	App Service name = $(websitename)
+	
+
+8. change code to run end to end
